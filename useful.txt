@@ -1,0 +1,6 @@
+常用命令：
+& D:/Anaconda/envs/database/python.exe manage.py runserver
+& D:/Anaconda/envs/database/python.exe manage.py makemigrations
+& D:/Anaconda/envs/database/python.exe manage.py migrate
+
+Field说明

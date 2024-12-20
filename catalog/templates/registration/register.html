@@ -1,0 +1,24 @@
+{% extends "registration/base_generic_reg.html" %}
+
+{% block content %}
+        <form action="{% url 'Registration' %}" method="post" enctype="multipart/form-data" class="login">
+            {% if errors %}
+            <div class="error-messages">
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% csrf_token %}
+            <h1>Register 注册</h1>
+            <label for="dishname">Username:</label>
+            <input type="username" name="username" placeholder="Username 用户名" required />
+            <label for="dishname">Password:</label>
+            <input type="password" name="password" placeholder="Password 密码" required />
+            <input type="submit" value="Submit 提交" />
+        </form>
+        <p><a href="{% url 'Registration_manager' %}">Register as a manager</a></p>
+
+{% endblock %}

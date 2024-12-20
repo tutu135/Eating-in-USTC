@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../static/css/reg_style.css" />
+    </head>
+    <body>
+        <form action="{% url 'managerlogin' %}" method="post" enctype="multipart/form-data" class="login">
+            {% csrf_token %}
+            <h1>Manager Login 经理登录</h1>
+            <div>
+                <td>Username</td>
+                <input type="username" name="username" placeholder="Username 用户名" required />
+            </div>
+            <div>
+                <td>Password</td>
+                <input type="password" name="password" placeholder="Password 密码" required />
+            </div>
+            <input type="submit" value="Submit 提交" />
+        </form>
+    </body>
+</html>

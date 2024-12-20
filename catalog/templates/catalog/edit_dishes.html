@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../static/css/reg_style.css" />
+    </head>
+    <body>
+        <form action="{% url 'editdishes' dish.dish_ID %}" method="post" enctype="multipart/form-data" class="login">
+            {% if errors %}
+                <div class="error-messages">
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% csrf_token %}
+            <h1>Edit Restaurant 修改餐厅信息</h1>
+            <label for="dish_name">Dish Name:</label>
+            <input type="text" id="dish_name" name="dish_name" value="{{ dish.dish_name }}" required>
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price" value="{{ dish.price }}" required>
+            <label for="moreinfo">More Info:</label>
+            <textarea id="moreinfo" name="moreinfo" value="{{ dish.more_Info }}" required></textarea>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <button type="submit">Submit</button>
+        </form>
+        {% if errors %}
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../static/css/reg_style.css" />
+    </head>
+    <body>
+        <form action="{% url 'deleterestaurants' restaurant.resta_ID %}" method="post" enctype="multipart/form-data" class="login">
+            {% if errors %}
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% csrf_token %}
+            <h1>Delete Restaurant 删除餐厅</h1>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

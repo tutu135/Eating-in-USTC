@@ -1,0 +1,99 @@
+{% extends "base_generic.html" %}
+{% load static %} 
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    
+<style>
+    /*css放在<link rel="stylesheet" href="{% static 'css/style.css' %}" />后面，就可以替代前面的同样的样式*/
+.button {
+  top:50%;
+  background-color:#0a0a23;
+  color: #fff;
+  position: absolute; /* 绝对定位 */
+  top: 50px; /* 距离顶部50像素 */
+  right: 100px; /* 距离左侧100像素 */
+  border:none; 
+  border-radius:10px; 
+  padding:15px;
+  min-height:30px; 
+  min-width: 120px;
+} 
+.button:focus {
+  outline-color: transparent;
+  outline-style:solid;
+  box-shadow: 0 0 0 4px #5a01a7;
+  transition: 0.7s;
+}
+.button:active {
+  background-color: #ffbf00;
+}
+/* 自定义样式 */
+
+
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #5a01a7;
+}
+
+.button:active {
+    background-color: #ffbf00;
+}
+
+h1 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.manager_restaurant {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    color: #0a0a23;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    </style>
+    {% endblock %}
+{% block content %}
+    <h1>{{ manager.username }}'s Restaurants</h1>
+    <ul>
+        {% for restaurant in restaurants %}
+            <li class="manager_restaurant">
+                <h2><a href="{{ restaurant.get_absolute_url }}">{{ restaurant.resta_name }}</a></h2>
+                <p>Location: {{ restaurant.get_location_display }}</p>
+                <p>Open: {{ restaurant.time_open }} - Close: {{ restaurant.time_close }}</p>
+                <p>Average Grade: {{ restaurant.AVG_grade }}</p>
+                <p>More Info: {{ restaurant.more_Info }}</p>
+                <p>Is Open: {{ restaurant.isopen }}</p>
+                <a href="{{ restaurant.get_absolute_url }}"><img src="{{ restaurant.image.url }}" alt="{{ restaurant.resta_name }}" width="200"></a>
+            </li>
+        {% endfor %}
+    </ul>
+   
+    <a href="{% url 'applyrestaurant' %}">
+        <button type="button" class="button">认领餐厅</button>
+    </a>
+{% endblock %}

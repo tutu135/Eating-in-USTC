@@ -1,0 +1,372 @@
+/* styles.css */
+
+/* FOR BASE */
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Container */
+.container-fluid {
+  padding: 0;
+}
+
+/* Sidebar */
+.sidebar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #e76f51da;
+  height: 100vh;
+  position: fixed;
+  width: 250px;
+}
+
+.sidebar-nav li {
+  margin-top: 50px;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.sidebar-nav li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+
+.sidebar-nav li a:hover {
+  background-color: #e76f51da;
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  background-color: #212529;
+}
+
+.sidebar-nav li {
+  color: #212529;
+}
+
+/* Content */
+.col-sm-10 {
+  margin-left: 250px; /* Same as sidebar width to avoid overlap */
+  width: calc(100% - 300px);
+  padding: 20px;
+}
+
+.col-sm-10 h1, .col-sm-10 h2, .col-sm-10 h3, .col-sm-10 h4, .col-sm-10 h5, .col-sm-10 h6 {
+  color: #343a40;
+}
+
+/* Links */
+a {
+  color: #007bff;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+a:active, a:focus {
+  color: #004085;
+  text-decoration: none;
+}
+
+/* User Info */
+.user-info {
+  color: #6c757d;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* FOR DETAIL */
+/* styles.css */
+
+/* DETAIL */
+
+header {
+  position: relative;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+}
+
+header img.detail-head-picture {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  mask-image: linear-gradient(to top, transparent, black 25%);
+  -webkit-mask-image: linear-gradient(to top, transparent, black 25%);
+}
+
+header h1, header p {
+  margin-bottom: 10px;
+}
+
+#detail-menu {
+  margin: 20px 0;
+}
+
+#detail-menu h2 {
+  margin-bottom: 10px;
+}
+
+#detail-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#detail-menu li {
+  margin-bottom: 20px;
+}
+
+#detail-menu .detail-dish {
+  display: flex;
+  align-items: center;
+}
+
+#detail-menu .detail-dish img {
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+#detail-menu .detail-dish-info h3, #detail-menu .detail-dish-info p {
+  margin: 0;
+}
+
+#detail-comments {
+  margin: 20px 0;
+}
+
+#detail-comments h2 {
+  margin-bottom: 10px;
+}
+
+#detail-comments ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#detail-comments li {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.detail-comment p {
+  margin: 5px 0;
+}
+
+.detail-comment-replies {
+  margin-top: 10px;
+  padding-left: 20px;
+  border-left: 2px solid #ccc;
+}
+
+.detail-reply p {
+  margin: 5px 0;
+}
+
+/* LOGIN */
+.login {
+  background-color: #f8f9fa;
+  width: 500px;
+  color: #0b132b;
+  padding: 40px;
+  box-shadow: 10px 10px 25px #00000080;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.login div {
+  margin-bottom: 20px;
+}
+
+.login td {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.login input {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  background: none;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 22px;
+  outline: none;
+  color: #0b132b;
+}
+
+.login input[type="text"], .login input[type="password"] {
+  border: 2px solid #3498db;
+  width: 220px;
+}
+
+.login input[type="submit"] {
+  width: 150px;
+  border: 2px solid #e76f51;
+  cursor: pointer;
+}
+
+.login input[type="text"]:focus, .login input[type="password"]:focus {
+  border-color: #e76f51;
+  width: 280px;
+  transition: 0.5s;
+}
+
+.login input[type="submit"]:hover {
+  background-color: #e76f51;
+  transition: 0.5s;
+}
+/* static/css/style.css */
+
+
+
+
+/* static/css/style.css */
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+form {
+  margin-top: 10px;
+}
+
+#searchBar, #sortCriteria, #locationFilter, #isOpenFilter,#tagFilter {
+  width: 20%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6347;
+  color: white;
+  cursor: pointer;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.restaurant {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 80%;
+  margin: 10px 0;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+}
+
+.restaurant img {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 20px;
+  align-self: flex-start;
+}
+
+.restaurant-details {
+  flex: 1;
+}
+
+.restaurant h2 {
+  margin-top: 0;
+  color: #ff6347;
+}
+
+.restaurant p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.dish-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dish-list li {
+  list-style: none;
+  margin: 10px;
+  text-align: center;
+}
+
+.dish-list img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#pagination a {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6347;
+  color: white;
+  text-decoration: none;
+}
+
+#pagination span.current {
+  margin: 0 10px;
+  font-size: 1em;
+}
+/* 选择所有 type 属性值为 goto 的 button 元素 */
+button[type="goto"] {
+  height: 30px;
+  width: 150px;
+  border: 2px solid #e76f51;
+  cursor: pointer;
+}
+
+/* 当鼠标悬停在 button 元素上时，应用样式 */
+button[type="goto"]:hover {
+  background-color: #e76f51;
+  transition: background-color 0.5s; /* 添加平滑过渡效果 */
+}
+
+a {
+  color: #858180; /* 使用父元素的颜色 */
+  text-decoration: none; /* 去除下划线 */
+}
+
+/* 可选：定义链接悬停时的样式 */
+a:hover {
+  color: #e76f51; /* 悬停时的颜色 */
+  text-decoration: underline; /* 悬停时是否添加下划线 */
+}

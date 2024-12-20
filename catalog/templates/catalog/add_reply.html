@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../static/css/reg_style.css" />
+    </head>
+    <body>
+        <form method="post" enctype="multipart/form-data" class="login">
+            {% if errors %}
+                <div class="error-messages">
+                    <ul>
+                        {% for error in errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            {% csrf_token %}
+            <h2>Reply to "{{ comment.content }}"</h2>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="3" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

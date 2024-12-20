@@ -1,0 +1,118 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+  /* Sidebar */
+.sidebar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #e76f51da;
+  min-height: 100vh;
+  position: fixed;
+  width: 250px;
+}
+
+.sidebar-nav li {
+  margin-top: 50px;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.sidebar-nav li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+}
+
+.sidebar-nav li a:hover {
+  background-color: #e76f51da;
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  background-color: #212529;
+}
+
+.sidebar-nav li {
+  color: #212529;
+}
+
+/* form_style.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 0px;  /* 控制标题与表单之间的间距 */
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;  /* 控制表单与页面边缘的间距 */
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form p {
+  margin-bottom: 5px;  /* 控制表单字段之间的间距 */
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;  /* 控制标签与输入框之间的间距 */
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="file"],
+form input[type="time"],
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 5px;  /* 控制输入框之间的间距 */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+form input[type="checkbox"] {
+  margin-right: 10px;  /* 控制复选框与其标签之间的间距 */
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;  /* 控制按钮与表单最后一个字段之间的间距 */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Adjust spacing for form elements */
+.form-group {
+  margin-bottom: 20px;  /* 控制每个表单组之间的间距 */
+}
+
+.container {
+  padding: 0px;  /* 控制内容区域的内边距 */
+}
+

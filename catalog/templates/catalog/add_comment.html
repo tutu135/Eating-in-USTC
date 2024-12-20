@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../static/css/reg_style.css" />
+    </head>
+    <body>
+        <form method="post" enctype="multipart/form-data" class="login">
+            {% if errors %}
+            <div class="error-messages">
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+            {% csrf_token %}
+            <h2>Add Comment for {{ restaurant.resta_name }}</h2>
+            <label for="grade">Grade:</label>
+            <input type="number" id="grade" name="grade" min="0" max="5" step="1" required>
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="3" required></textarea>
+            <label for="dish_ID">Dish (optional):</label>
+            <select id="dish_ID" name="dish_ID">
+                <option value="">None</option>
+                {% for dish in dishes %}
+                    <option value="{{ dish.pk }}">{{ dish.dish_name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </body>
+</html>

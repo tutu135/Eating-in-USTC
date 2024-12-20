@@ -1,0 +1,17 @@
+{% extends "catalog/base_generic_cata.html" %}
+
+{% block content %}
+  <h1>Dishes List</h1>
+
+  {% if dish_list %}
+    <ul>
+      {% for dish in dish_list %}
+        <li>
+          <a href="{{ dish.get_absolute_url }}">{{ dish.dish_name }}</a> ({{dish.resta_ID}})
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There is no such dish.</p>
+  {% endif %}
+{% endblock %}

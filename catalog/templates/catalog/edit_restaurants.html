@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../static/css/reg_style.css" />
+    </head>
+    <body>
+        <form action="{% url 'editrestaurants' restaurant.resta_ID %}" method="post" enctype="multipart/form-data" class="login">
+            {% if errors %}
+            <div class="error-messages">
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+            {% csrf_token %}
+            <h1>Edit Restaurant 修改餐厅信息</h1>
+            <label for="resta_name">Restaurant Name:</label>
+            <input type="text" id="resta_name" name="resta_name" value="{{ restaurant.resta_name }}" required>
+            <label for="location">Location:</label>
+            <select id="location" name="location">
+                    {% for value, display in location_choices %}
+                        <option value="{{ value }}" {% if restaurant.location == value %}selected{% endif %}>{{ display }}</option>
+                    {% endfor %}
+            </select>
+            <label for="time_open">Time Open:</label>
+            <input type="time" id="time_open" name="time_open" value="{{ restaurant.time_open }}">
+            <label for="time_close">Time Close:</label>
+            <input type="time" id="time_close" name="time_close" value="{{ restaurant.time_close }}">
+            <label for="tag">Tag:</label>
+            <input type="text" id="tag" name="tag" value="{{ restaurant.tag }}">
+            <label for="more_Info">More Info:</label>
+            <textarea id="more_Info" name="more_Info">{{ restaurant.more_Info }}</textarea>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <label for="isopen">Is Open:</label>
+            <input type="checkbox" id="isopen" name="isopen" {% if restaurant.isopen %}checked{% endif %}>
+            <button type="submit">Submit</button>
+        </form>
+        {% if errors %}
+            <ul>
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </body>
+</html>

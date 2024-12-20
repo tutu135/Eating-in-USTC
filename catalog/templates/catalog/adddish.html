@@ -1,0 +1,10 @@
+{% extends "catalog/base_generic_cata.html" %}
+{% block style %}<link rel="stylesheet" href="../../static/css/form_style.css" />{% endblock %}
+{% block content %}
+<h1>Upload Image</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+</form>
+{% endblock %}

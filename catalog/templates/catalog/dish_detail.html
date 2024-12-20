@@ -1,0 +1,52 @@
+{% extends "catalog/base_generic_cata.html" %}
+
+{% block content %}
+  <header>
+    <img class="detail-head-picture" src='{{ dish.image.url }}' alt="">
+    <h1>Name: {{ dish.dish_name }}</h1>
+    <p><strong>Restaurant:</strong> <a href="{{ dish.resta_ID.get_absolute_url }}">{{ dish.resta_ID.resta_name }}</a></p> <!-- author detail link not yet defined -->
+    <p><strong>Tag:</strong> {{ dish.tag }}</p>
+    <p><strong>Price:</strong> {{ dish.price }}</p>
+    <p><strong>more_Info:</strong> {{ dish.more_Info }}</p>
+    {% if user.is_authenticated and can_edit %}
+    <a href="{% url 'editdishes' dish.pk %}"><button type="goto">Edit Dish</button></a>
+    <form action="{% url 'deletedishes' dish.pk %}" method="post">
+      {% csrf_token %}
+      <button type="goto">Delete Dish</button>
+    </form>
+    {% endif %}
+  </header>
+
+
+
+  <section id = "detail-comments">
+    <h2>Comments:</h2>
+    {% if user.is_authenticated %}
+    <a href="{% url 'add-comment-dish' dish.pk %}"><button type="goto">Add Comment</button></a>
+    {% endif %}
+    <ul>
+      {% if dish_comments_and_replies %}
+        {% for comment in dish_comments_and_replies %}
+          <li>
+            <div class="comment">
+              <p><strong>{{ comment.user_ID }}</strong>- Rating: {{comment.grade}}</p> 
+              <p>{{ comment.content }}</p>
+              <div class = "detail-comment-replies">
+                {% for reply in comment.replies.all %}
+                  <div class = "detail-reply">
+                    <p><strong>{{ reply.user_ID }}:</strong> {{ reply.content }}</p>
+                  </div>
+                {% endfor %}
+                {% if user.is_authenticated %}
+                <a href="{% url 'add-reply-dish' comment.pk %}">+Reply</a>
+                {% endif %}
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      {% else %}
+        <p>There is no comment here yet.</p>
+      {% endif %}
+    </ul>
+  </section>
+{% endblock %}
